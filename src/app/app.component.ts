@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { User} from './shared/module/user';
+import { UserService } from './shared/service/user.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,18 +10,10 @@ import { User} from './shared/module/user';
 export class AppComponent implements OnInit {
 
   users: User[];
-
-
-  constructor (private http: Http) {}
+  constructor (private service: UserService) {}
 ngOnInit() {
-//  HTTP call for grab users and subscribe them observable 
-this.http.get('https://reqres.in/api/users' )
-.subscribe(data => {
-  console.log(data.json());
-  this.users = data.json().data;
-});
 
+this.service.getUsers()
+.subscribe(users => this.users = users);
 }
-
-
 }
