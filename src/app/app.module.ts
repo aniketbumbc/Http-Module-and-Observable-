@@ -9,12 +9,14 @@ import {UserService} from './shared/service/user.service';
 import { UsersComponent } from './users/users/users.component';
 import {routing} from './app.routing';
 import { UserListComponent } from './users/user-list/user-list/user-list.component';
+import { UserSingleComponent } from './users/user-single/user-single/user-single.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    UserListComponent
+    UserListComponent,
+    UserSingleComponent
   ],
   imports: [
     BrowserModule,
