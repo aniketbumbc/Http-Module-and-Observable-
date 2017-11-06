@@ -7,17 +7,20 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {UserService} from './shared/service/user.service';
 import { UsersComponent } from './users/users/users.component';
+import {routing} from './app.routing';
+import { UserListComponent } from './users/user-list/user-list/user-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-  
+    routing
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
